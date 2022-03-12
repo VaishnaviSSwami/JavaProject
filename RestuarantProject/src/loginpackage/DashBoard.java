@@ -2,6 +2,10 @@ package loginpackage;
 
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -56,10 +60,26 @@ public class DashBoard {
 		lblNewLabel.setBounds(72, 365, 231, 25);
 		frame.getContentPane().add(lblNewLabel);
 		
+		
+		
 		JButton btnNewButton_1 = new JButton("New button");
 		btnNewButton_1.setIcon(new ImageIcon("C:\\Users\\Vaishnavi\\Desktop\\JavaProject\\RestuarantProject\\src\\loginpackage\\staffman.png"));
 		btnNewButton_1.setBounds(56, 172, 210, 186);
 		frame.getContentPane().add(btnNewButton_1);
+		btnNewButton_1.addActionListener(new ActionListener()
+		{
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+				StaffManagement s=new StaffManagement();
+				s.staff();
+				
+				
+			}
+	
+		});
 		
 		JLabel lblFoodManagement = new JLabel("FOOD MANAGEMENT");
 		lblFoodManagement.setFont(new Font("Tahoma", Font.PLAIN, 20));
